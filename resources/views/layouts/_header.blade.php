@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand " href="{{ url('/') }}">
-            LaraBBS
+            {{ env('APP_NAME') }}
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,10 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                <li class="nav-item"><a class="nav-link" href="#">登录</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">注册</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route
+                ('login') }}">登录</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route
+                ('register') }}">注册</a></li>
             </ul>
         </div>
     </div>
