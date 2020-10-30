@@ -1,10 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-
-use App\Models\Topic;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 $factory->define(App\Models\Topic::class, function (Faker $faker) {
     $sentence = $faker->sentence();
