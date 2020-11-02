@@ -20,7 +20,7 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 //用户个人中心
 Route::resource('/users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
-//Route::get('/users/{user}', 'UsersController@show')->name('users.show');
-//Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+Route::post('upload_image', 'TopicsController@upload_image')->name('topics.upload_image');
