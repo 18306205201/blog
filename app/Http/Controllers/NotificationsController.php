@@ -19,8 +19,11 @@ class NotificationsController extends Controller
     public function index()
     {
         // 获取登陆用户的所有通知
-        $notifications = Auth::user()->notifications()->paginate(20);
-        Auth::user()->markAsRead();
+        $user = Auth::user();
+        $notifications = $user->notifications()->paginate(20);
+        if($user->notification_count) {
+            $user->markAsRead();
+        }
         return view('notifications.index', compact('notifications'));
     }
 }
