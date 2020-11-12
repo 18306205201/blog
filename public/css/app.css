@@ -17066,6 +17066,10 @@ body {
   margin-top: 0px;
 }
 
+.login-register {
+  padding: 0.5rem 1rem;
+}
+
 /* Sticky footer styles */
 
 html {
