@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Redis;
+
 Route::get('/', 'TopicsController@index')->name('root');
+Route::get('/get_visits', function() {
+    echo '网站访问量: '.Redis::get('site_total_visits');
+});
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 //Route::post('login', 'Auth\LoginController@login');
