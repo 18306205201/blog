@@ -2,11 +2,11 @@
     <ul class="list-unstyled">
         @foreach ($topics as $topic)
             <li class="media">
-                <div class="media-left">
+                <!-- <div class="media-left">
                     <a href="{{ route('users.show', [$topic->user_id]) }}">
                         <img class="media-object img-thumbnail mr-3" style="width: 52px; height: 52px;" src="{{ $topic->user->avatar }}" title="{{ $topic->user->name }}">
                     </a>
-                </div>
+                </div> -->
 
                 <div class="media-body">
 
@@ -14,9 +14,13 @@
                         <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
                             {{ $topic->title }}
                         </a>
+                      <!--
                         <a class="float-right" href="{{ route('topics.show', [$topic->id]) }}">
                             <span class="badge badge-secondary badge-pill"> {{ $topic->reply_count }} </span>
                         </a>
+                        -->
+                      <i class="far fa-clock"></i>
+                      <span class="timeago" title="最后活跃于：{{ $topic->updated_at }}">{{ $topic->updated_at->diffForHumans() }}</span>
                     </div>
 
                     <small class="media-body meta text-secondary">
@@ -25,19 +29,25 @@
                             {{ $topic->category->name }}
                         </a>
 
-                        <span> • </span>
+<!--                        <span> • </span>
                         <a class="text-secondary" href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}">
                             <i class="far fa-user"></i>
                             {{ $topic->user->name }}
                         </a>
-                        <span> • </span>
-                        <i class="far fa-clock"></i>
-                        <span class="timeago" title="最后活跃于：{{ $topic->updated_at }}">{{ $topic->updated_at->diffForHumans() }}</span>
+                        <span> • </span> -->
+
+
                     </small>
 
                 </div>
             </li>
-
+            <li>
+              <div>
+                <i class="far fa-thumbs-up">赞</i>
+                <i class="far fa-comment-alt">评论</i>
+                <i class="fas fa-share">分享</i>
+              </div>
+            </li>
             @if ( ! $loop->last)
                 <hr>
             @endif

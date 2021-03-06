@@ -2,38 +2,39 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'EasyBlog') - {{ setting('site_name', 'EasyBlog') }}</title>
-    <meta name="description" content="@yield('description', setting('seo_description', 'PHP，laravel论坛'))" />
-    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'PHP，laravel论坛'))" />
+  <title>@yield('title', 'EasyBlog') - {{ setting('site_name', 'EasyBlog') }}</title>
+  <meta name="description" content="@yield('description', setting('seo_description', 'PHP，laravel论坛'))"/>
+  <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'PHP，laravel论坛'))"/>
 
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <!-- Styles -->
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link href="/fonts-5/ css/all.css" rel="stylesheet">
 
-    @yield('styles')
+  @yield('styles')
 
 </head>
 
 <body>
 <div id="app" class="{{ route_class() }}-page">
 
-    @include('layouts._header')
+  @include('layouts._header')
 
-    <div class="container">
+  <div class="container">
 
-        @include('shared._messages')
+    @include('shared._messages')
 
-        @yield('content')
+    @yield('content')
 
-    </div>
+  </div>
 
-    @include('layouts._footer')
+  @include('layouts._footer')
 </div>
 {{--@if (app()->isLocal())--}}
 {{--    @include('sudosu::user-selector')--}}

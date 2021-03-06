@@ -27,9 +27,9 @@
             <ul class="navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item"><i class="fa fa-sign-in-alt" aria-hidden="true"></i><a class="login-register" href="{{ route('login')
+                    <li class="nav-item"><i class="fa fa-sign-in-alt fa-2x" aria-hidden="true"></i><a class="login-register" href="{{ route('login')
                     }}">登录</a></li>
-                    <li class="nav-item"><i class="fa fa-user-plus" aria-hidden="true"></i><a class="login-register" href="{{ route('register') }}">注册</a></li>
+                    <li class="nav-item"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i><a class="login-register" href="{{ route('register') }}">注册</a></li>
                 @else
                     <li class="nav-item">
                         <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
