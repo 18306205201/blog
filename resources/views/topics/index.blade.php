@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="row mb-5">
-    <div class="col-lg-9 col-md-9 topic-list">
+    <div class="col-lg-12 col-md-12 topic-list">
       @if (isset($category))
         <div class="alert alert-info" role="alert">
           {{ $category->name }} ：{{ $category->description }}
@@ -36,8 +36,8 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 sidebar">
-        @include('topics._sidebar')
-    </div>
+{{--    <div class="col-lg-3 col-md-3 sidebar">--}}
+{{--        @include('topics._sidebar')--}}
+{{--    </div>--}}
   </div>
 @endsection

@@ -6,24 +6,28 @@
 @section('content')
 
   <div class="row">
-
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
-      <div class="card ">
+    <div class="col-lg-1 col-md-1 hidden-sm hidden-xs">
+      <div class="card">
         <div class="card-body">
-          <div class="text-center">
-            作者：{{ $topic->user->name }}
-          </div>
-          <hr>
-          <div class="media">
-            <div align="center">
-              <a href="{{ route('users.show', $topic->user->id) }}">
-                <img class="thumbnail img-fluid" src="{{ $topic->user->avatar }}" width="300px" height="300px">
-              </a>
+          <div class="col-lg-1 col-md-1">
+            <a href=""><i class="far fa-thumbs-up"></i></a>
+            <div>
+               <span>0</span>
             </div>
           </div>
+         <!--
+          <div class="col-lg-1 col-md-1">
+            <a href=""><i class="far fa-comments"></i></a>
+            <div>
+              <span>0</span>
+            </div>
+          </div>
+          -->
         </div>
+
       </div>
     </div>
+
 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
       <div class="card">
@@ -73,5 +77,24 @@
       </div>
 
     </div>
+
+    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs author-info">
+      <div class="card ">
+        <div class="card-body">
+          <div class="text-center">
+            作者：{{ $topic->user->name }}
+          </div>
+          <hr>
+          <div class="media">
+            <div align="center">
+              <a href="{{ route('users.show', $topic->user->id) }}">
+                <img class="thumbnail img-fluid" src="{{ $topic->user->avatar }}" width="300px" height="300px">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 @stop
