@@ -1,13 +1,13 @@
-<?php 
+<?php
 return [
     'labels' => [
-        'Reply' => 'Reply',
-        'reply' => 'Reply',
+        'Reply' => '回复',
+        'reply' => '回复',
     ],
     'fields' => [
-        'topic_id' => 'topic_id',
-        'user_id' => 'user_id',
-        'content' => 'content',
+        'topic_id' => '文章ID',
+        'user_id' => '用户ID',
+        'content' => '内容',
     ],
     'options' => [
     ],

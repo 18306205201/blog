@@ -17,18 +17,23 @@ class ReplyController extends AdminController
      */
     protected function grid()
     {
-        return Grid::make(new Reply(), function (Grid $grid) {
+        return Grid::make(Reply::with(['topic' => function($query) {
+            $query->select('id', 'title');
+        }, 'user']), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('topic_id');
+            $grid->column('topic.title', '文章标题');
             $grid->column('user_id');
+            $grid->column('user.name', '用户');
             $grid->column('content');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-        
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
-        
+                $filter->equal('topic_id');
             });
+            $grid->disableEditButton();
+            $grid->disableCreateButton();
         });
     }
 
@@ -48,24 +53,13 @@ class ReplyController extends AdminController
             $show->field('content');
             $show->field('created_at');
             $show->field('updated_at');
+            $show->disableEditButton();
+            $show->disableQuickEdit();
         });
     }
 
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
     protected function form()
     {
-        return Form::make(new Reply(), function (Form $form) {
-            $form->display('id');
-            $form->text('topic_id');
-            $form->text('user_id');
-            $form->text('content');
-        
-            $form->display('created_at');
-            $form->display('updated_at');
-        });
+        return Form::make(new Reply(), function(){});
     }
 }
