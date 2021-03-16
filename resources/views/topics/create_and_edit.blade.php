@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $topic->id ? '编辑博文' : '新建博文')
+@section('title', $topic->id ? '编辑文章' : '新建文章')
 
 @section('content')
 
@@ -65,7 +65,6 @@
 
     @section('styles')
         <link rel="stylesheet" href="{{ asset('css/simditor.css') }}">
-{{--        <link rel="stylesheet" href="{{ asset('editormd/css/editormd.css') }}" />--}}
     @endsection
 
     @section('scripts')
@@ -73,17 +72,6 @@
         <script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
-
-{{--        <script src="{{ asset('editormd/editormd.js') }}"></script>--}}
-
-{{--        <script src="{{ asset('editormd/lib/marked.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/prettify.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/raphael.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/underscore.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/sequence-diagram.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/flowchart.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/lib/jquery.flowchart.min.js') }}"></script>--}}
-{{--        <script src="{{ asset('editormd/editormd.js') }}"></script>--}}
 
         <script>
             $(document).ready(function (){
@@ -100,43 +88,6 @@
                     },
                     pasteImage: true,
                 });
-                // var testEditor;
-                // $(function() {
-                //     $.get("examples/test.md", function(md){
-                //         testEditor = editormd("test-editormd", {
-                //             width: "98%",
-                //             height: 730,
-                //             path : 'lib/',
-                //             markdown : md,
-                //             codeFold : true,
-                //             saveHTMLToTextarea : true,
-                //             searchReplace : true,
-                //             htmlDecode : "style,script,iframe|on*",
-                //             emoji : true,
-                //             taskList : true,
-                //             tocm            : true,         // Using [TOCM]
-                //             tex : true,                   // 开启科学公式TeX语言支持，默认关闭
-                //             flowChart : true,             // 开启流程图支持，默认关闭
-                //             sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
-                //             imageUpload : true,
-                //             imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                //             imageUploadURL : "examples/php/upload.php",
-                //             onload : function() {
-                //                 console.log('onload', this);
-                //             }
-                //         });
-                //     });
-                // });
-                //
-                // var wordsView;
-                // wordsView = editormd.markdownToHTML("wordsView", {
-                //     htmlDecode      : "style,script,iframe",  // you can filter tags decode
-                //     emoji           : true,
-                //     taskList        : true,
-                //     tex             : true,  // 默认不解析
-                //     flowChart       : true,  // 默认不解析
-                //     sequenceDiagram : true,  // 默认不解析
-                // });
             });
         </script>
     @endsection

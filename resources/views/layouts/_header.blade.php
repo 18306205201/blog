@@ -31,11 +31,11 @@
                     }}">登录</a></li>
                     <li class="nav-item"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i><a class="login-register" href="{{ route('register') }}">注册</a></li>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
-                            <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">--}}
+{{--                            <i class="fa fa-paint-brush" aria-hidden="true"></i>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-item notification-badge">
                         <a class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondary' }} text-white" href="{{ route('notifications.index') }}">
                             {{ Auth::user()->notification_count }}

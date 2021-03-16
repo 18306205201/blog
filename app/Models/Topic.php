@@ -16,6 +16,11 @@ class Topic extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function adminUser()
+    {
+        return $this->belongsTo(AdminUser::class, 'user_id', 'id');
+    }
+
     public function scopeWithOrder($query, $order)
     {
         //不同的排序，使用不同的数据查询逻辑

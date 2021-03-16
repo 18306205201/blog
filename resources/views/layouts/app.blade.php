@@ -9,9 +9,9 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'EasyBlog') - {{ setting('site_name', 'EasyBlog') }}</title>
-  <meta name="description" content="@yield('description', setting('seo_description', 'PHP，laravel论坛'))"/>
-  <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'PHP，laravel论坛'))"/>
+  <title>@yield('title', 'EasyBlog')</title>
+  <meta name="description" content="@yield('description', '天道酬勤')"/>
+  <meta name="keyword" content="@yield('keyword', 'PHP')"/>
 
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
