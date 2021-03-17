@@ -105,4 +105,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
 
         $this->attributes['avatar'] = $path;
     }
+
+    public function thumbTopics()
+    {
+        return $this->belongsToMany(Topic::class, 'user_thumb_topics', 'user_id', 'topic_id')->withTimestamps();
+    }
 }

@@ -35,7 +35,12 @@ class TopicsController extends Controller
         if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
             return redirect($topic->link(), 301);
         }
-        return view('topics.show', compact('topic'));
+        // 判断是否点赞
+        $thumbed = false;
+        if ($user = $request->user()) {
+            $thumbed = !!($user->thumbTopics()->find($topic->id));
+        }
+        return view('topics.show', compact('topic', 'thumbed'));
     }
 
 	public function create(Topic $topic)
@@ -95,5 +100,23 @@ class TopicsController extends Controller
             }
         }
         return $data;
+    }
+
+    // 点赞
+    public function thumb(Topic $topic, Request $request)
+    {
+        $user = $request->user();
+        if ($user->thumbTopics()->find($topic->id)) {
+            return [];
+        }
+        $user->thumbTopics()->attach($topic);
+        return [];
+    }
+    // 取消点赞
+    public function unthumb(Topic $topic, Request $request)
+    {
+        $user = $request->user();
+        $user->thumbTopics()->detach($topic);
+        return [];
     }
 }
